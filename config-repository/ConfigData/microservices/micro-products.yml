@@ -1,0 +1,47 @@
+---
+spring:
+  profiles: dev
+
+server:
+  port: 9997
+
+management:
+  security:
+    enabled: false
+
+logging:
+  level:
+    org.springframework.security: error
+    com.desigual.micros.catalog: debug
+
+---
+spring:
+  profiles: pre
+
+server:
+  port: 9998
+
+management:
+  security:
+    enabled: false
+
+logging:
+  level:
+    org.springframework.security: error
+    com.desigual.micros.catalog: debug
+
+---
+spring:
+  profiles: pro
+
+server:
+  port: 9999
+
+management:
+  security:
+    enabled: false
+
+logging:
+  level:
+    org.springframework.security: error
+    com.desigual.micros.catalog: debug
