@@ -1,0 +1,7 @@
+encrypt:
+  failOnError: false
+  keyStore:
+    alias: ${KEYSTORE.ALIAS:config-server-keystore}
+    location: ${KEYSTORE.LOCATION:classpath:/root/secure/micros-keystore.jks}
+    password: ${KEYSTORE.PASS:administrator}
+    secret: ${KEYSTORE.SECRET:administrator}

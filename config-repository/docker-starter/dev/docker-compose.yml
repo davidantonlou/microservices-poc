@@ -1,0 +1,26 @@
+version: '3'
+services:
+    ## Common Services
+    consul:
+        image: consul:0.9.2
+        ports:
+            - 8300:8300
+            - 8301:8301
+            - 8302:8302
+            - 8500:8500
+            - 8600:8600
+    config-server:
+        image: config-server:0.0.1-SNAPSHOT
+        environment:
+            - PROFILES=dev
+        ports:
+            - 8888:8888
+    micro-products:
+        image: micro-products:0.0.1-SNAPSHOT
+        environment:
+            - PROFILES=dev
+            - CONFIG_SERVER_URL=config-server:8888
+        ports:
+            - 9997:9997
+        depends_on:
+            - config-server

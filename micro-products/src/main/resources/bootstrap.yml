@@ -1,0 +1,24 @@
+server:
+  port: 9997
+spring:
+  application:
+    name: micro-products
+  profiles:
+    active: dev
+  cloud:
+    consul:
+      host: consul
+      port: 8500
+    config:
+      username: admin
+      password: admin
+      failFast: true
+      retry:
+        initialInterval: 3000
+        maxInterval: 10000
+        multiplier: 1.1
+        maxAttempts: 10
+      enabled: true
+      discovery:
+        enabled: true
+        service-id: config-server
