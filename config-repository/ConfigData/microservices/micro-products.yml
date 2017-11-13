@@ -3,7 +3,8 @@ spring:
   profiles: dev
 
 server:
-  port: 9997
+  port: 9990
+  context-path: /products
 
 management:
   security:
